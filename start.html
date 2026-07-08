@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ida Skovmand</title>
+
+  <link rel="stylesheet" href="https://use.typekit.net/cvm3gxs.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/icon/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="img/icon/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="img/icon/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="img/icon/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="img/icon/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="img/icon/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="img/icon/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="img/icon/apple-touch-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/icon/apple-touch-icon-180x180.png" />
+
+  <title>ida skovmand – texts, photos, zines, food projects</title>
+</head>
+<body>
+
+<nav class="menu">
+    <ul class="menu-links">
+         <li class="special"><a href="start.html" class="special">INDEX</a></li>
+        <li><a href="#about">IDA SKOVMAND</a></li>
+         <li><a href="photography.html">PORTFOLIO</a></li>
+         <li><a href="index.html">PROJECTS</a></li>
+    </ul>
+</nav>
+
+ <h1 class="site-heading">INFO & DIARY</h1>
+
+<main class="index-layout-wrapper">
+    
+    <div class="index-news-card">
+        <p><br><br><u>News:</u>
+          <br>no news
+        
+    </div>
+
+  <div class="diary-section">
+    
+        <div class="diary-hero">
+          
+            <img id="main-diary-view" src="diary/stack.jpg" alt="Latest entry">
+            <p id="diary-date-display">At home, July 2026</p> 
+
+        </div>
+
+    
+        <div class="diary-grid">
+          
+           <img class="diary-thumb" src="diary/stack.jpg" data-date="" alt="stack">
+            <img class="diary-thumb" src="diary/orlando.jpg" data-date="Orlando" alt="orlando">
+             <img class="diary-thumb" src="diary/apollon.jpg" data-date="On the way to the oracle" alt="delphi">
+             <img class="diary-thumb" src="diary/modernspider.jpg" data-date="spider about town" alt="spider">
+              <img class="diary-thumb" src="diary/marsden.JPG" data-date="" alt="marsden">
+        
+            <img class="diary-thumb" src="diary/shells.jpg" data-date="" alt="shells">
+            <img class="diary-thumb" src="diary/blood.jpg" data-date="" alt="blood">
+            <img class="diary-thumb" src="diary/view.jpg" data-date="Sangenjaya, 2025" alt="view">
+            <img class="diary-thumb" src="diary/poster.jpg" data-date="" alt="poster">
+            <img class="diary-thumb" src="diary/marble.jpg" data-date="Chalkida, 2026" alt="chalkis">
+            <img class="diary-thumb" src="diary/madwoman.jpg" data-date="" alt="mad woman">
+            <img class="diary-thumb" src="diary/birds.jpg" data-date="Bird, bird" alt="pigeons">
+            
+            <img class="diary-thumb" src="diary/dolphins.jpeg" data-date="A rat king of dolphins" alt="dolphins">
+            <img class="diary-thumb" src="diary/blushbeet.jpg" data-date="" alt="beets">
+            <img class="diary-thumb" src="diary/lamp.jpg" data-date="" alt="lamp">
+            
+            <img class="diary-thumb" src="diary/wiggle.jpg" data-date="" alt="poster">
+            <img class="diary-thumb" src="diary/laurapita.jpg" data-date="Laura got herself some street food" alt="laura">
+            <img class="diary-thumb" src="diary/serpentines.jpg" data-date="" alt="serpentine">
+            <img class="diary-thumb" src="diary/bluestem.jpg" data-date="" alt="blue stem">
+            <img class="diary-thumb" src="diary/twops.jpg" data-date="" alt="pigeons">
+       
+            <img class="diary-thumb" src="diary/hubbard.jpg" data-date="Katherine Hubbard, The Great Room, Secession, 2026" alt="katherine hubbard">
+            
+
+
+        </div>
+    </div>
+</main>
+
+<script>
+    // Handles the thumbnail click to swap images
+    document.querySelectorAll('.diary-thumb').forEach(thumb => {
+        thumb.addEventListener('click', function() {
+            document.getElementById('main-diary-view').src = this.src;
+            document.getElementById('diary-date-display').textContent = this.getAttribute('data-date');
+        });
+    });
+</script>
+
+<div id="about" class="page-overlay">
+  <button class="close-popup-btn" aria-label="Close page">&times;</button>
+  <div class="popup-scroll-container">
+    <div class="popup-inner-content" id="index-bio-placeholder"></div>
+  </div>
+</div>
+
+<div id="dama" class="page-overlay cafe-postit">
+  <button class="close-popup-btn" aria-label="Close page">&times;</button>
+  <div class="popup-scroll-container">
+    <div class="popup-inner-content" id="index-dama-placeholder"></div>
+  </div>
+</div>
+
+<div id="writing" class="page-overlay writing-panel">
+  <button class="close-popup-btn" aria-label="Close page">&times;</button>
+  <div class="popup-scroll-container">
+    <div class="popup-inner-content" id="index-writing-placeholder"></div>
+  </div>
+</div>
+
+<script src="js/video.js"></script>
+<script src="bio-content.js"></script>
+<script>
+  document.getElementById('index-bio-placeholder').innerHTML = sharedBiographyHTML;
+  document.getElementById('index-dama-placeholder').innerHTML = sharedDamaHTML;
+  document.getElementById('index-writing-placeholder').innerHTML = sharedWritingHTML;
+</script>
+
+<script>
+function handleNavigationOverlay() {
+  const hash = window.location.hash;
+  const about = document.getElementById('about');
+  const dama = document.getElementById('dama');
+  const writing = document.getElementById('writing');
+
+  if (!hash) {
+    if (about) about.classList.remove('is-visible');
+    if (dama) dama.classList.remove('is-visible');
+    if (writing) writing.classList.remove('is-visible');
+    document.body.style.overflow = ''; 
+    return;
+  }
+
+  if (hash === '#about') {
+    if (about) about.classList.add('is-visible');
+    if (dama) dama.classList.remove('is-visible'); 
+    if (writing) writing.classList.remove('is-visible');
+    document.body.style.overflow = 'hidden'; 
+  } 
+  
+  if (hash === '#dama') {
+    if (about) about.classList.add('is-visible');  
+    if (dama) dama.classList.add('is-visible');   
+    if (writing) writing.classList.remove('is-visible');
+    document.body.style.overflow = 'hidden'; 
+  }
+
+  if (hash === '#writing') {
+    if (about) about.classList.add('is-visible');
+    if (writing) writing.classList.add('is-visible');
+    if (dama) dama.classList.remove('is-visible');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+document.querySelectorAll('.close-popup-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const isLayeredCard = button.closest('#dama') || button.closest('#writing');
+
+    if (isLayeredCard) {
+      window.location.hash = '#about';
+    } else {
+      history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+    
+    handleNavigationOverlay();
+  });
+});
+
+window.addEventListener('hashchange', handleNavigationOverlay);
+
+window.onload = function() {
+    window.location.hash = '';
+    handleNavigationOverlay();
+};
+</script>
+
+</body>
+</html>
