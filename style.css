@@ -190,6 +190,7 @@ figcaption {
   transform: translateX(-50%);
   z-index: 900;
   color: #428EFD;
+  text-decoration: underline;
   
   margin: 0;
   font-size: 1.4em;
