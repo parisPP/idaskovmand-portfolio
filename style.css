@@ -371,6 +371,7 @@ figcaption {
   flex-direction: column;
   align-items: center;
   align-self: start;
+  position: relative;
 }
 
 .collage-item img {
@@ -378,6 +379,31 @@ figcaption {
   height: auto;
   display: block;
   object-fit: cover;
+   
+}
+
+.collage-item:has(.clickable-project) {
+  position: relative;
+}
+
+.collage-item:has(.clickable-project)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #adbdea;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.collage-item:has(.clickable-project):hover::before {
+  opacity: 0.6;
+}
+.clickable-project {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: pointer; 
 }
 
 .span-1 { grid-column: span 1; }
@@ -1147,5 +1173,102 @@ div#writing.page-overlay.writing-panel .close-popup-btn {
     position: absolute;
   }
 }
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2147483647;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-overlay.active {
+  display: flex;
+}
+
+.popup-content {
+  position: relative;
+  width: 60vw;
+  height: 92vh;
+  max-height: 92vh;
+  box-sizing: border-box;
+  border-radius: 12px;
+  overflow-y: auto;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dama-dot-design {
+  background-color: #ffffff;
+  background-image: radial-gradient(#adbdea 1px, transparent 1px);
+  background-size: 25px 25px;
+  background-attachment: local;
+}
+
+.close-popup {
+  position: sticky;
+  top: -1.5rem;
+  margin-top: -1.5rem;
+  margin-left: -1.5rem;
+  display: inline-block;
+  font-size: 1.8rem;
+  color: #428EFD;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
 
 
+@media (max-width: 768px) {
+  .popup-content {
+    width: 94vw;
+    height: 96vh;
+    padding: 1.5rem;
+  }
+}
+
+
+
+.project-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  color: #34373f;
+}
+
+.project-title h2 {
+  margin: 5rem 0 4rem 0;
+  font-weight: normal;
+  color: #34373f;
+  font-style: italic;
+  font-size: 1em;
+
+}
+
+.project-subtitle {
+  font-style: normal;
+  font-size: 0.8em;
+  margin: 0;
+  font-weight: normal;
+}
+
+@media (max-width: 768px) {
+  .collage-item:has(.clickable-project)::after {
+    content: attr(data-title);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-style: italic;
+    text-decoration: underline dotted #ffffff;
+    text-align: center;
+    z-index: 10;
+    pointer-events: none;
+  }
+}
