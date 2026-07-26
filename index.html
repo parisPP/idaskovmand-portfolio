@@ -215,17 +215,22 @@
 
 
 
-
-
 <script src="js/video.js"></script>
 <script src="bio-content.js"></script>
 <script src="walkingperson-content.js"></script>
 
 <script>
-  document.getElementById('index-bio-placeholder').innerHTML = sharedBiographyHTML;
-  document.getElementById('index-dama-placeholder').innerHTML = sharedDamaHTML;
-  document.getElementById('index-writing-placeholder').innerHTML = sharedWritingHTML;
-  document.getElementById('popup-walkingperson').innerHTML = sharedWalkingPersonHTML;
+  const bioPlaceholder = document.getElementById('index-bio-placeholder');
+  if (bioPlaceholder) bioPlaceholder.innerHTML = sharedBiographyHTML;
+
+  const damaPlaceholder = document.getElementById('index-dama-placeholder');
+  if (damaPlaceholder) damaPlaceholder.innerHTML = sharedDamaHTML;
+
+  const writingPlaceholder = document.getElementById('index-writing-placeholder');
+  if (writingPlaceholder) writingPlaceholder.innerHTML = sharedWritingHTML;
+
+  const walkingPopup = document.getElementById('popup-walkingperson');
+  if (walkingPopup) walkingPopup.innerHTML = sharedWalkingPersonHTML;
 </script>
 
 <script>
@@ -312,6 +317,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
-
     </body>
   </html>
